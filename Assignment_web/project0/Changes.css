@@ -1,0 +1,40 @@
+@media (min-width:500px)
+{
+    body{
+        background-color:lightgray;
+    }
+}
+@media (max-width:499px)
+{
+    body{
+        background-color:gray;
+    }
+}
+
+h1,h2{
+
+color:red;
+font-family:Calibri;
+font-weight:bold;
+}
+ol li{
+    color:palegreen;
+    font-weight:bold;
+}
+ol > li{
+    color:lightskyblue;
+    font-weight:bold;
+}
+.class{
+    text-align:center;
+    color:brown;
+}
+a::befor{
+    content:"\21d2";
+}
+/* .table-header-cell{
+    display: table-cell;
+    padding: 100px;
+    text-align: justify;
+    border-bottom: 1px solid black;
+    } */

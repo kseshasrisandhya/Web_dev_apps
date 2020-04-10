@@ -1,0 +1,32 @@
+$color: #ffa500;
+
+h1{
+    color:$color;
+    text-align:center;
+    font-style:Calibri;
+    font:bold;
+}
+
+ul > li{
+    color:darkgreen;
+  }
+  ol li{
+      color:darkred;
+  }
+  
+
+  p { 
+      color:green; 
+    font-size: 0.875em;  
+    line-height: 2.2;  
+  }
+
+  %message{
+    color:darkolivegreen;
+    text-align:center;
+  }
+  .alert alert-danger{
+      @extend %message;
+  }
+  
+
