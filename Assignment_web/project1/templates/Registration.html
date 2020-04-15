@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Registration Form
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            body{
+                background:#323232;
+            }
+            .wrap
+            {
+                width:350px;
+                margin:auto;
+                background:#00adee;
+                margin-top:50px;
+                padding:5px;
+            }
+            form{
+                padding:10px;
+                font-family:arial;
+                border:1px dotted white;
+            }
+            
+          </style>
+    </head>
+
+    <body>
+            <div class="alert alert-info" role="alert"  >
+                    <h1 style="text-align:center;">REGISTRATION FORM</h1>  
+            </div>
+        
+        <div class="wrap" role="alert">
+            <div   style="max-width:500px;margin:auto;">
+            
+                <form action="/print" method="post" >
+                
+                    <label> FIRST NAME : </label>
+                    <br>
+                    <input type="text" name="Fname" id="name"
+                    placeholder="Enter First Name">
+                    
+                    <br>
+
+                    <br>
+                    <label> LAST NAME : </label>
+                    <br>
+                    <input type="text" name="Lname" id="name"
+                    placeholder="Enter last Name"><br><br>
+
+                    <label> MOBILE NUMBER : </label><br>
+                    <select id="ph" >
+                        <option> +91</option>
+                        <option> +92</option>
+                        <option> +93</option>
+                        <option> +94</option>
+                        <option> +95</option>
+                    </select>
+                    <input type="Number" name="MNumber" id="number"
+                    placeholder="Enter your Mobile Number"><br><br>
+
+
+
+                    <label> EMAIL : </label><br>
+                    <input type="email" name="Email" id="name"
+                    placeholder="Enter your Email"><br><br>
+
+                    <label> PASSWORD : </label><br>
+                    <input type="password" name="pass" id="name"
+                    placeholder="Enter your password"><br><br>
+
+                    <label> RE-ENTER PASSWORD : </label><br>
+                    <input type="password" name="pass" id="name"
+                    placeholder="Re-Enter your password"><br><br>
+
+                    <label> GENDER : </label><br>
+                    <input type="radio" name="male"id="male">
+                    <span id="male">&nbsp; Male </span>&nbsp;&nbsp;
+
+                    <input type="radio" name="female"id="female">
+                    <span id="female">&nbsp; Female </span>&nbsp;&nbsp;
+
+                    <input type="radio" name="others"id="others">
+                    <span id="others">&nbsp; Others </span>&nbsp;&nbsp;<br><br>
+
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                </form>
+            </div>
+            
+        </div>
+    </body>
+</html>
