@@ -40,7 +40,7 @@
                     <label> FIRSTNAME : </label>
                     <br>
                     <input type="text" name="Fname" id="name"
-                    placeholder="Enter First Name">
+                    placeholder="Enter First Name" >
                     
                     <br>
 
@@ -48,7 +48,7 @@
                     <label> LASTNAME : </label>
                     <br>
                     <input type="text" name="Lname" id="name"
-                    placeholder="Enter last Name"><br><br>
+                    placeholder="Enter last Name" ><br><br>
 
                     <label> MOBILE NUMBER : </label><br>
                     <select id="ph" >
@@ -59,21 +59,21 @@
                         <option> +95</option>
                     </select>
                     <input type="Number" name="MNumber" id="number"
-                    placeholder="Enter your Mobile Number"><br><br>
+                    placeholder="Enter your Mobile Number" ><br><br>
 
 
 
                     <label> EMAIL : </label><br>
                     <input type="email" name="Email" id="name"
-                    placeholder="Enter your Email"><br><br>
+                    placeholder="Enter your Email" required><br><br>
 
                     <label> PASSWORD : </label><br>
                     <input type="password" name="pass" id="name"
-                    placeholder="Enter your password"><br><br>
+                    placeholder="Enter your password" required><br><br>
 
                     <label> RE-ENTER PASSWORD : </label><br>
                     <input type="password" name="pass" id="name"
-                    placeholder="Re-Enter your password"><br><br>
+                    placeholder="Re-Enter your password" required><br><br>
 
                     <label> GENDER : </label><br>
                     <input type="radio" name="male"id="male">
@@ -85,7 +85,10 @@
                     <input type="radio" name="others"id="others">
                     <span id="others">&nbsp; Others </span>&nbsp;&nbsp;<br><br>
 
-                    <input class="btn btn-primary" type="submit" value="Submit">
+                    <input class="btn btn-primary" type="submit"  value="Submit" >
+                    <!-- <button type="Login" class="btn btn-primary">LOGIN</button>  -->
+                    <button type="submit" formaction="auth" value="Login">Login</button>
+
                 </form>
             </div>
             

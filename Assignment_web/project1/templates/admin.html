@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+            ADMIN PAGE
+        </title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>
+                    FIRST NAME
+                </th>
+                <th> LAST NAME</th>
+                <th>EMAIL</th>
+                <th> Date Time</th>
+            </tr>
+            {% for record in regist %}
+            <tr>
+                <td> {{record.FIRSTNAME}}</td>
+                <td> {{record.LASTNAME}}</td>
+                <td> {{record.EMAIL}}</td>
+                <td> {{record.datetime}}</td>
+            </tr>
+        </table>
+        {% endfor %}
+    </body>
+</html>
