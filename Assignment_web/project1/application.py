@@ -87,10 +87,7 @@ def authenticate():
         # return render_template("print.html",first=name,EMAIL = email)
         return redirect(url_for('index'))
     except Exception :
-	    return render_template("error.html", errors = "Details are already given")   
-
-
-      
+	    return render_template("error.html", errors = "Details are already given")       
 
 # @app.route('/login', methods = ['GET', 'POST'])
 # def login():
