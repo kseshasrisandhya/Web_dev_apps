@@ -9,4 +9,5 @@ class Registrations(db.Model):
     LASTNAME = db.Column(db.String, nullable=False)
     EMAIL = db.Column(db.String, primary_key=True)
     datetime =db.Column(db.String,nullable=False)
+    password=db.Column(db.String,nullable=False)
       

@@ -46,11 +46,12 @@ def register():
 
 @app.route("/print",methods=["POST","GET"])
 def print1():
-    Registrations.query.all()
+    # Registrations.query.all()
     first = request.form.get("Fname")
     last = request.form.get("Lname")
     email = request.form.get("Email")
-    regist = Registrations(FIRSTNAME=first, LASTNAME=last,EMAIL=email,datetime=datetime.now())
+    password = request.form.get("pass")
+    regist = Registrations(FIRSTNAME=first, LASTNAME=last,EMAIL=email,datetime=datetime.now(),password=password)
     try:
         db.session.add(regist)
         db.session.commit()
@@ -61,7 +62,7 @@ def print1():
 
 @app.route("/admin")
 def admin():
-    Register=Registrations.query.all()
+    # Register=Registrations.query.all()
     return render_template("admin.html",regist=Register)
 
 @app.route('/')
@@ -76,9 +77,10 @@ def index():
 
 @app.route("/auth",methods = ["GET","POST"])
 def authenticate():
-    Registrations.query.all()
+    # Registrations.query.all()
     name = request.form.get("Fname")
     email = request.form.get("Email")
+
     log = Registrations(FIRSTNAME = name  ,EMAIL = email)
     try:
         Member = db.session.query(Registrations).filter(Registrations.EMAIL == email).all()
