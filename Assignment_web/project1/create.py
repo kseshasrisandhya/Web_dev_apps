@@ -4,8 +4,6 @@ from flask import Flask, render_template, request
 from regis import *
 
   # Import table definitions.
-
-
 app = Flask(__name__)
 
   # Tell Flask what SQLAlchemy databas to use.

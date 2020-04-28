@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>
+            REVIEW
+        </title>
+        
+    </head>
+
+    <body>
+            <form action="/reviews" method= "POST">
+
+        <h1 style="text-align:center"> REVIEWS</h1>
+        
+        <h3 style="text-align:center;color:blue">RATE THIS BOOK </h3>
+            <div class="control"  style="text-align:center" required>
+                <!-- <label class="radio">
+                    <input type="radio" name="rsvp">
+                    ONE
+                </label>
+                <label class="radio">
+                    <input type="radio" name="rsvp">
+                    TWO
+                </label>
+                <label class="radio" >
+                    <input type="radio" name="rsvp" >
+                    THREE
+                </label>
+                <label class="radio" >
+                    <input type="radio" name="rsvp" >
+                    FOUR
+                </label>
+                <label class="radio" disabled>
+                    <input type="radio" name="rsvp" >
+                    FIVE
+                </label> -->
+
+                <form action="/reviews" method="post">
+                    <textarea name="ISBN" rows="1" cols="80" maxlength="450" placeholder ="Enter ISBN number"></textarea>
+                    <textarea name="EMAIL" rows="1" cols="80" maxlength="450" placeholder ="EMAIL_ID"></textarea>
+                        <select name="rating" float: left>
+                          <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                          </select>
+                        <br>
+                        <textarea name="review" rows="3" cols="80" maxlength="450" placeholder ="Write a review for the book here(max characters:450)"></textarea>
+
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit review</button>
+                        <!-- {% if text %}
+                        <div class="alert alert-success col-md-3" role="alert">
+                             {{ text }}
+                        </div>
+                        {% endif %} -->
+                      </form>
+                
+            </div>
+
+        <!-- <h3 Style="text-align:center;color:green">Comments about the Book</h3>
+        <div style="text-align:center" required>
+                <textarea id="w3mission" rows="4" cols="50" name="text"></textarea>
+            <div> -->
+        <!-- <textarea id="w3mission" rows="4" cols="50" style="text-align:center" required>
+        </textarea> -->
+        <p></p>
+        <p></p>
+        <!-- <div class="form-group col-sm" style="text-align:center">
+            <input type='submit' name='submitbtn'  value='Submit'>
+        </div> -->
+    </form> 
+        
+        
+        
+       
+
+        
+    </body>
+    
+</html>

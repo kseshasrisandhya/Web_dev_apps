@@ -7,6 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from regis import *
 from datetime import datetime
+# from imports import *
 
 # 
 
@@ -44,13 +45,20 @@ def register():
     return render_template("Registration.html")
 
 
+
 @app.route("/print",methods=["POST","GET"])
 def print1():
-    Registrations.query.all()
+    # Registrations.query.all()
     first = request.form.get("Fname")
+    print(first)
     last = request.form.get("Lname")
+    print(last)
     email = request.form.get("Email")
-    regist = Registrations(FIRSTNAME=first, LASTNAME=last,EMAIL=email,datetime=datetime.now())
+    print(email)
+    password = request.form.get("password")
+    print(password)
+    regist = Registrations(FIRSTNAME=first, LASTNAME=last,EMAIL=email,datetime=datetime.now(),password=password)
+    print(regist)
     try:
         db.session.add(regist)
         db.session.commit()
@@ -61,7 +69,7 @@ def print1():
 
 @app.route("/admin")
 def admin():
-    Register=Registrations.query.all()
+    # Register=Registrations.query.all()
     return render_template("admin.html",regist=Register)
 
 @app.route('/')
@@ -76,21 +84,19 @@ def index():
 
 @app.route("/auth",methods = ["GET","POST"])
 def authenticate():
-    Registrations.query.all()
+    # Registrations.query.all()
     name = request.form.get("Fname")
     email = request.form.get("Email")
+
     log = Registrations(FIRSTNAME = name  ,EMAIL = email)
     try:
         Member = db.session.query(Registrations).filter(Registrations.EMAIL == email).all()
         print(Member[0].FIRSTNAME)
         session['user'] = request.form.get("Email")
         # return render_template("print.html",first=name,EMAIL = email)
-        return redirect(url_for('index'))
+        return render_template("review.html")
     except Exception :
-	    return render_template("error.html", errors = "Details are already given")   
-
-
-      
+	    return render_template("error.html", errors = "Details are already given")       
 
 # @app.route('/login', methods = ['GET', 'POST'])
 # def login():
@@ -111,6 +117,24 @@ def logout():
    # remove the username from the session if it is there
    session.pop('user', None)
    return redirect(url_for('register'))
+
+
+@app.route('/reviews',methods = ["GET","POST"])
+def add_review():
+    if request.method == 'POST':
+        email = request.form.get("EMAIL")
+        book=request.form.get('ISBN')
+        text=request.form.get('review')
+        rating=request.form.get('rating')
+        # print(rating)
+        r = Review(userid= email,bookid= book,text = text, rating = rating)
+        # print(r)
+        db.session.add(r)
+        db.session.commit()
+        return redirect(url_for("logout"))
+    else :
+        return redirect(url_for("logout"))
+
 
 
 
